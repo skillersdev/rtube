@@ -13,6 +13,8 @@ jQuery(document).ready(function(jQuery){
     });
     //login register click
     jQuery(".loginReg").on("click", function(e){
+
+        
         e.preventDefault();
         jQuery(this).next().slideToggle();
         jQuery(this).toggleClass("active");
@@ -20,6 +22,8 @@ jQuery(document).ready(function(jQuery){
 
     //search bar
     jQuery(".search").on("click", function(){
+
+        alsert("testing search bar");
         if(jQuery(this).children().hasClass("fa-search")){
             jQuery(this).children().removeClass("fa-search");
             jQuery(this).children().addClass("fa-times");
