@@ -118,7 +118,7 @@ export class LoginService {
 
         jQuery.noConflict();
         
-        //jQuery(document).foundation();
+        jQuery(document).foundation();
         
         jQuery(document).ready(function(jQuery){
             "use strict";

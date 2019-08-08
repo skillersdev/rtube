@@ -21,9 +21,11 @@ jQuery(document).ready(function(jQuery){
     });
 
     //search bar
+   
     jQuery(".search").on("click", function(){
 
-        alsert("testing search bar");
+       
+
         if(jQuery(this).children().hasClass("fa-search")){
             jQuery(this).children().removeClass("fa-search");
             jQuery(this).children().addClass("fa-times");
@@ -37,6 +39,7 @@ jQuery(document).ready(function(jQuery){
     });
 
      //Premium carousel
+  
     jQuery('.owl-carousel').each(function(){
         var owl = jQuery(this);
         jQuery(".prev").on('click', function () {
