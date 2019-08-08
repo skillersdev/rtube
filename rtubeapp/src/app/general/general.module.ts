@@ -10,10 +10,11 @@ import { MostPopularVideosComponent } from './most-popular-videos/most-popular-v
 import { NewestVideosComponent } from './newest-videos/newest-videos.component';
 import { BrowesByCategoryComponent } from './browes-by-category/browes-by-category.component';
 import { FooterComponent } from './footer/footer.component';
+import { TopheaderComponent } from './topheader/topheader.component';
 
 
 @NgModule({
-  declarations: [TopbarComponent, HomeComponent, FeaturedVideosComponent, WatchMoviesComponent, MostPopularVideosComponent, NewestVideosComponent, BrowesByCategoryComponent, FooterComponent],
+  declarations: [TopbarComponent, HomeComponent, FeaturedVideosComponent, WatchMoviesComponent, MostPopularVideosComponent, NewestVideosComponent, BrowesByCategoryComponent, FooterComponent, TopheaderComponent],
   imports: [
     CommonModule,
     GeneralRoutingModule,

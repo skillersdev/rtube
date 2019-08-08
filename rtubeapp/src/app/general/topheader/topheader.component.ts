@@ -6,11 +6,11 @@ import { AppSettings } from '../../appSettings';
 import { LoginService } from '../../services/login.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-topheader',
+  templateUrl: './topheader.component.html',
+  styleUrls: ['./topheader.component.css']
 })
-export class HomeComponent implements OnInit {
+export class TopheaderComponent implements OnInit {
 
   constructor(private loginService: LoginService,private router: Router,private http:Http) {
     // document.body.className="theme-red ls-closed";
@@ -18,11 +18,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-
-    //this.loginService.localStorageData();
-   
-
-
+    this.loginService.viewsActivate();
   }
 
 }
