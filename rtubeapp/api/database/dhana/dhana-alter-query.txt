@@ -1,0 +1,4 @@
+
+----------------
+01/07/2019
+ALTER TABLE `group_master` ADD `channelgroup` INT(10) NOT NULL AFTER `group_name`;

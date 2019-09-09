@@ -1,0 +1,16 @@
+1)  
+ 
+  ALTER TABLE `product_master` CHANGE `total_views` `total_views` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '0', CHANGE `total_likes` `total_likes` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '0';
+
+2) services:
+
+ALTER TABLE `services` CHANGE `total_views` `total_views` INT(15) NOT NULL DEFAULT '0', CHANGE `total_likes` `total_likes` INT(15) NOT NULL DEFAULT '0';
+
+3) Advertsiements:
+
+ALTER TABLE `user_advertisements`  ADD `total_views` INT(15) NOT NULL DEFAULT '0'  AFTER `created_at`,  ADD `total_likes` INT(15) NOT NULL DEFAULT '0'  AFTER `total_views`;
+
+
+4) COntact Master:
+
+ ALTER TABLE `contacts_master` CHANGE `about_website` `about_website` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;

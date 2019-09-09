@@ -1,0 +1,27 @@
+RewriteEngine on  
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php/$0 [PT,L]
+    
+SetEnv DATABASE_HOST_NAME "90.0.0.111"
+SetEnv DATABASE_USER_NAME "devusr"
+SetEnv DATABASE_PASSWORD "PhPssDev"
+SetEnv DATABASE_NAME "php17080701_gems_bihar_v1"
+
+
+
+#Header set Access-Control-Allow-Origin "*"
+#Header set Access-Control-Allow-Credentials "true"
+#Header set Access-Control-Allow-Headers "Authorization, Origin, X-Requested-With, Content-Type, Accept, X-Wsse"
+#Header set Access-Control-Request-Method "POST, GET, OPTIONS, PUT, DELETE, HEAD, PATCH"
+#Header set Access-Control-Max-Age 3600
+#Header set Access-Control-Expose-Headers "X-Pagination-Current-Page"
+
+
+<IfModule mod_headers.c>    
+   Header set Access-Control-Allow-Origin *
+</IfModule>
+    
+
+
