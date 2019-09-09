@@ -31,7 +31,6 @@ export class CommonService
         let options = new RequestOptions({
             params: new URLSearchParams()
         });
-        
         return this._http.get(apiUrl, options).pipe(map((allusers: Response) => allusers.json()));         
     }
     editdata(apiUrl:any, idx:any) 
@@ -43,40 +42,12 @@ export class CommonService
         // Have to make a URLSearchParams with a query string
         params: new URLSearchParams()
           });
-        return this._http.get(apiUrl + idx ,{headers: headers}).pipe(map((resultdata: Response) => resultdata.json()));
+        return this._http.post(apiUrl + idx , options,{headers: headers}).pipe(map((resultdata: Response) => resultdata.json()));
     }
-    deletedata(apiUrl:any, model:any)
-    {
-        let headers = new Headers();
-        headers.append('Content-Type','application/json; charset=utf-8');
-        return this._http.post(apiUrl ,model, {headers:headers}).pipe(map((model: Response) => model.json()));
-        
-    }
-
-    getdatabyid(apiUrl:any, model:any)
-    {
-        let headers = new Headers();
-        headers.append('Content-Type','application/json; charset=utf-8');
-        return this._http.post(apiUrl ,model, {headers:headers}).pipe(map((model: Response) => model.json()));
-
-    }
-
-
-    deletedatabyid(apiUrl:any, idx:any)
-    {
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        let params = '';
-        let options = new RequestOptions({
-        // Have to make a URLSearchParams with a query string
-        params: new URLSearchParams() 
-          });
-        return this._http.delete(apiUrl + idx ,{headers: headers}).pipe(map((resultdata: Response) => resultdata.json()));
-    }
-    getdatabyurlid(apiUrl:any, idx:any) 
+    getdatabyid(apiUrl:any, idx:any) 
     {
     	let headers = new Headers();
-        headers.append('Content-Type', 'application/json; charset=utf-8');
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
         let params = '';
         let options = new RequestOptions({
             params: new URLSearchParams()
@@ -88,16 +59,58 @@ export class CommonService
      {
     	let headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
-       // let User= [];
-        let params = '';
-        let options = new RequestOptions({
-        // Have to make a URLSearchParams with a query string
-        params: new URLSearchParams()
-          });
-        return this._http.put(apiUrl + model.id ,model,{headers: headers}).pipe(map((resultdata: Response) => resultdata.json()));
+        var body ='model='+JSON.stringify(model);
+        return this._http.post(apiUrl, body,{headers: headers}).pipe(map((model: Response) => model.json()));
+    }
+
+    insertdata(apiUrl:any, model:any)
+     {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(model);
+        var body ='model='+JSON.stringify(model);
+
+        return this._http.post(apiUrl, body,{headers: headers}).pipe(map((model: Response) => model.json()));
     }
     
-   
-   
- 
+    checkexistdata(apiUrl:any, model:any)
+    {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        var body ='model='+JSON.stringify(model);
+        console.log(apiUrl);
+        return this._http.post(apiUrl, body,{headers: headers}).pipe(map((model: Response) => model.json()));
+    }
+
+    deletedata(apiUrl:any, idx:any) 
+    {
+    	let headers = new Headers();
+	    headers.append('Content-Type', 'application/json; charset=utf-8'); 
+        let params = '';
+        let options = new RequestOptions({
+            params: new URLSearchParams()
+        });
+        return this._http.post(apiUrl + idx , options,{headers: headers}).pipe(map((resultdata: Response) => resultdata.json()));
+    }  
+    uploadFile(apiUrl:any,fileToUpload: File) 
+    {
+        let formData: FormData = new FormData();
+        formData.append('file',fileToUpload);
+        let headers = new Headers();
+     
+        var body = formData;
+    
+        return this._http.post(apiUrl, body, { headers: headers }).pipe(map((model: Response) => model.json()));
+    }   
+    
+    chatuploadFile(apiUrl:any,fileToUpload: File) 
+    {
+        let formData: FormData = new FormData();
+        formData.append('file',fileToUpload);
+        let headers = new Headers();
+     
+        var body = formData;
+    
+        return this._http.post(apiUrl, body, { headers: headers }).pipe(map((model: Response) => model.json()));
+    }   
 }
