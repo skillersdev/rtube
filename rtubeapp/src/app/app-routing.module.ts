@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     loadChildren: './general/general.module#GeneralModule'
   },
+  {
+    path: 'videodetail',
+    loadChildren: './general/general.module#GeneralModule'
+  },
 
 ];
 

@@ -32,7 +32,7 @@ export class NewestVideosComponent implements OnInit {
 
   videodetail(id:any)
   {
-    this.router.navigate(['/editvideos', id]);
+    this.router.navigate(['videodetail/detail', id]);
   }
 
 }

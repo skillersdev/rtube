@@ -8,13 +8,14 @@ import { FeaturedVideosComponent } from './featured-videos/featured-videos.compo
 import { WatchMoviesComponent } from './watch-movies/watch-movies.component';
 import { MostPopularVideosComponent } from './most-popular-videos/most-popular-videos.component';
 import { NewestVideosComponent } from './newest-videos/newest-videos.component';
+import { DetailVideosComponent } from './newest-videos/detailvideos.component';
 import { BrowesByCategoryComponent } from './browes-by-category/browes-by-category.component';
 import { FooterComponent } from './footer/footer.component';
 import { TopheaderComponent } from './topheader/topheader.component';
 
 
 @NgModule({
-  declarations: [TopbarComponent, HomeComponent, FeaturedVideosComponent, WatchMoviesComponent, MostPopularVideosComponent, NewestVideosComponent, BrowesByCategoryComponent, FooterComponent, TopheaderComponent],
+  declarations: [TopbarComponent, HomeComponent, FeaturedVideosComponent, WatchMoviesComponent, MostPopularVideosComponent, NewestVideosComponent, BrowesByCategoryComponent, FooterComponent, TopheaderComponent,DetailVideosComponent],
   imports: [
     CommonModule,
     GeneralRoutingModule,

@@ -41,6 +41,29 @@ class Home_controller extends CI_Controller {
     
 
   }
- 
+ public function editvideodata($id)
+    {
+        //var_dump($id); die();
+        $this->output->set_content_type('application/json');
+        $response=array();
+        $response['status']="success";
+        $result=array();
+
+        $res=$this->db->query("select * from ".$this->db->dbprefix('video_sections')." where id='".$id."'");
+       
+       
+        
+        if($res->num_rows()>0){
+            $in_array=$res->result_array();
+            $result['video_det']=$in_array[0];
+        }else{
+            $response['status']="failure";
+            $response['message']=" No Package record found!!";
+        }
+        $response['result']=$result;
+
+        echo json_encode($response,JSON_UNESCAPED_SLASHES);
+        die();
+    }
 
 }
