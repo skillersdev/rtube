@@ -13,13 +13,13 @@ export class NewestVideosComponent implements OnInit {
   videolist:Array<Object>;
   websiteurl:string=AppSettings.API_BASE;
   constructor(
-  	private CommonService:CommonService,
-  	private router: Router,
+    private CommonService:CommonService,
+    private router: Router,
     private http:Http) { }
 
   ngOnInit() {
 
-  	 this.CommonService.getdata(AppSettings.getRtubevideolist)
+     this.CommonService.getdata(AppSettings.getRtubevideolist)
         .subscribe(det =>{
             if(det.result!="")
             { 
