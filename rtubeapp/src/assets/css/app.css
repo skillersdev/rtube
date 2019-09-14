@@ -1994,7 +1994,7 @@ kbd {
   [data-whatinput='mouse'] .button {
     outline: 0; }
   .button:hover, .button:focus {
-    background-color: #e96969;
+    background-color: #023977;
     color: #fff; }
   .button.tiny {
     font-size: 0.6rem; }
