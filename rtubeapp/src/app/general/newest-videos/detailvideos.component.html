@@ -28,7 +28,7 @@
                     <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/YE7VzlLtp-4" allowfullscreen></iframe> -->
 
                     <video width="560" height="315" controls>
-                        <source src="https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4" type="video/mp4">
+                        <source src="{{videourl}}{{model.video_file}}" type="video/mp4">
                         
                         Your browser does not support HTML5 video.
                     </video>
@@ -51,17 +51,17 @@
                             <div class="media-object-section">
                                 <div class="author-img-sec">
                                     <div class="thumbnail author-single-post">
-                                        <a href="#"><img src= "http://placehold.it/80x80" alt="post"></a>
+                                        <a href="#"><img src= "{{websiteurl}}{{model.preview_image}}" alt="post"></a>
                                     </div>
-                                    <p class="text-center"><a href="#">Joseph John</a></p>
+                                    <p class="text-center"><a href="#">{{model.title}}</a></p>
                                 </div>
                             </div>
                             <div class="media-object-section object-second">
                                 <div class="author-des clearfix">
                                     <div class="post-title">
-                                        <h4>There are many variations of passage.</h4>
+                                        <h4>There are too many passage here</h4>
                                         <p>
-                                            <span><i class="fa fa-clock-o"></i>5 January 16</span>
+                                            <span><i class="fa fa-clock-o"></i>{{model.created_date | date:'d MMMM y'}}</span>
                                             <span><i class="fa fa-eye"></i>1,862K</span>
                                             <span><i class="fa fa-thumbs-o-up"></i>10</span>
                                             <span><i class="fa fa-thumbs-o-down"></i>1000</span>
@@ -99,9 +99,9 @@
                             <h5>Description</h5>
                         </div>
                         <div class="description showmore_one">
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                            <p>{{model.description}}</p>
 
-                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur</p>
+                           <!--  <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur</p> -->
                            
 
                             <div class="categories">
