@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule } from '@angular/forms';
 import { GeneralRoutingModule } from './general-routing.module';
 import { TopbarComponent } from './topbar/topbar.component';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +20,7 @@ import { SearchComponent } from './search/search.component';
   imports: [
     CommonModule,
     GeneralRoutingModule,
+    FormsModule
   ],
   providers: [
     ],

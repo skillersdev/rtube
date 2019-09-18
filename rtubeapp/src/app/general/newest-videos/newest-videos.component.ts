@@ -11,6 +11,7 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 })
 export class NewestVideosComponent implements OnInit {
   videolist:Array<Object>;
+  searchModel:any={};
   websiteurl:string=AppSettings.API_BASE;
   constructor(
     private CommonService:CommonService,
@@ -21,6 +22,7 @@ export class NewestVideosComponent implements OnInit {
 
      this.CommonService.getdata(AppSettings.getRtubevideolist)
         .subscribe(det =>{
+          //return false;
             if(det.result!="")
             { 
               this.videolist=det.result;
@@ -34,5 +36,5 @@ export class NewestVideosComponent implements OnInit {
   {
     this.router.navigate(['videodetail/detail', id]);
   }
-
+ 
 }

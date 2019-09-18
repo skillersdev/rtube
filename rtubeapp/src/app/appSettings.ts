@@ -22,6 +22,7 @@ export class AppSettings{
 		 
 	public static getRtubevideolist= AppSettings.API_BASE + "getrtubevideolist"; 
 	public static EditvideoDetail = AppSettings.API_BASE+"/editvideodetail/";
+	public static getSearchresultAPI= AppSettings.API_BASE+"/getvideopagesearchresult";
 
 
 	
