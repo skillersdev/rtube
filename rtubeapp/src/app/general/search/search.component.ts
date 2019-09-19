@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppSettings } from '../../appSettings';
+import { Routes,Router,RouterModule}  from '@angular/router';
+import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 @Component({
   selector: 'app-search',
@@ -10,7 +12,8 @@ export class SearchComponent implements OnInit {
   resultdata:any={};
   model:any={};
   websiteurl:string=AppSettings.API_BASE;
-  constructor() { }
+  constructor(private router: Router,
+    private http:Http) { }
 
   ngOnInit() {
   	this.resultdata=[];
@@ -18,5 +21,9 @@ export class SearchComponent implements OnInit {
   	this.resultdata = JSON.parse(localStorage.getItem("searchData"));
   	this.model.createdby = localStorage.getItem("user_fname");
   }
-
+   videodetail(id:any)
+  {
+    this.router.navigate(['videodetail/detail', id]);
+    
+  }
 }

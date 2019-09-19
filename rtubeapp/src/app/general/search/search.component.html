@@ -8,7 +8,7 @@
             <div class="large-12 columns">
                 <nav aria-label="You are here:" role="navigation">
                     <ul class="breadcrumbs">
-                        <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="javascript:void(0);">Home</a></li>
                         <li>
                             <span class="show-for-sr">Current: </span>search results
                         </li>
@@ -50,9 +50,10 @@
                                     <div class="row list-group">
                                         <div class="item large-4 medium-6 columns list" *ngFor="let data of resultdata let idx=index">
                                             <div class="post thumb-border">
-                                                <div class="post-thumb">
+                                                <div class="post-thumb" 
+                                                (click)="videodetail(data.id)">
                                                     <img src="{{websiteurl}}/{{data.preview_image}}" alt="new video">
-                                                    <a href="" class="hover-posts">
+                                                    <a href="javascript:void(0);" class="hover-posts">
                                                         <span><i class="fa fa-play"></i>Watch Video</span>
                                                     </a>
                                                     <div class="video-stats clearfix">
@@ -69,11 +70,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="post-des">
-                                                    <h6><a href="">There are many variations of passage.</a></h6>
+                                                    <h6><a href="javascript:void(0);">There are many variations of passage.</a></h6>
                                                     <div class="post-stats clearfix">
                                                         <p class="pull-left">
                                                             <i class="fa fa-user"></i>
-                                                            <span><a href="#">{{model.createdby}}</a></span>
+                                                            <span><a href="javascript:void(0);">{{model.createdby}}</a></span>
                                                         </p>
                                                         <p class="pull-left">
                                                             <i class="fa fa-clock-o"></i>
@@ -104,7 +105,7 @@
                 </section>
                 <!-- ad Section -->
                 <!--<div class="googleAdv">
-                    <a href="#"><img src="images/goodleadv.png" alt="googel ads"></a>
+                    <a href="javascript:void(0);"><img src="images/goodleadv.png" alt="googel ads"></a>
                 </div>-->
 				<!-- End ad Section -->
             </div><!-- end left side content area -->
@@ -138,260 +139,260 @@
                                 <div class="widgetContent">
                                     <ul class="accordion" data-accordion>
                                         <li class="accordion-item is-active" data-accordion-item>
-                                            <a href="#" class="accordion-title">Entertainment</a>
+                                            <a href="javascript:void(0);" class="accordion-title">Entertainment</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Musics <span>(8)</span></a>
+                                                        <a href="javascript:void(0);">Musics <span>(8)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Animations <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Animations <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Dramas <span>(5)</span></a>
+                                                        <a href="javascript:void(0);">Dramas <span>(5)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="accordion-item" data-accordion-item>
-                                            <a href="#" class="accordion-title">Technology</a>
+                                            <a href="javascript:void(0);" class="accordion-title">Technology</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="accordion-item" data-accordion-item>
-                                            <a href="#" class="accordion-title">Fashion &amp; Beauty</a>
+                                            <a href="javascript:void(0);" class="accordion-title">Fashion &amp; Beauty</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="accordion-item" data-accordion-item>
-                                            <a href="#" class="accordion-title">sports &amp; recreation</a>
+                                            <a href="javascript:void(0);" class="accordion-title">sports &amp; recreation</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="accordion-item" data-accordion-item>
-                                            <a href="#" class="accordion-title">Automotive</a>
+                                            <a href="javascript:void(0);" class="accordion-title">Automotive</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="accordion-item" data-accordion-item>
-                                            <a href="#" class="accordion-title">foods &amp; drinks</a>
+                                            <a href="javascript:void(0);" class="accordion-title">foods &amp; drinks</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="accordion-item" data-accordion-item>
-                                            <a href="#" class="accordion-title">Peopls</a>
+                                            <a href="javascript:void(0);" class="accordion-title">Peopls</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="accordion-item" data-accordion-item>
-                                            <a href="#" class="accordion-title">Nature</a>
+                                            <a href="javascript:void(0);" class="accordion-title">Nature</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="accordion-item" data-accordion-item>
-                                            <a href="#" class="accordion-title">Transportationy</a>
+                                            <a href="javascript:void(0);" class="accordion-title">Transportationy</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="accordion-item" data-accordion-item>
-                                            <a href="#" class="accordion-title">places &amp; landmarks</a>
+                                            <a href="javascript:void(0);" class="accordion-title">places &amp; landmarks</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="accordion-item" data-accordion-item>
-                                            <a href="#" class="accordion-title">Travel</a>
+                                            <a href="javascript:void(0);" class="accordion-title">Travel</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="accordion-item" data-accordion-item>
-                                            <a href="#" class="accordion-title">Animals</a>
+                                            <a href="javascript:void(0);" class="accordion-title">Animals</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="accordion-item" data-accordion-item>
-                                            <a href="#" class="accordion-title">Historicals &amp; Architectural</a>
+                                            <a href="javascript:void(0);" class="accordion-title">Historicals &amp; Architectural</a>
                                             <div class="accordion-content" data-tab-content>
                                                 <ul>
                                                     <li class="clearfix">
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Movies <span>(10)</span></a>
+                                                        <a href="javascript:void(0);">Movies <span>(10)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Trailers <span>(3)</span></a>
+                                                        <a href="javascript:void(0);">Trailers <span>(3)</span></a>
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-play-circle-o"></i>
-                                                        <a href="#">Comedy <span>(6)</span></a>
+                                                        <a href="javascript:void(0);">Comedy <span>(6)</span></a>
                                                     </li>
                                                 </ul>
                                             </div>

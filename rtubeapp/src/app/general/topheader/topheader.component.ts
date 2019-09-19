@@ -25,7 +25,6 @@ export class TopheaderComponent implements OnInit {
    getSearchresults(value:any)
   {
     this.searchModel.searchKey = value;
-     console.log(this.searchModel.searchword);
         localStorage.setItem("searchvalue",this.searchModel.searchword);
 
     //console.log(this.searchModel);
@@ -35,6 +34,7 @@ export class TopheaderComponent implements OnInit {
         //this.searchModel.searchKey = value;
         localStorage.setItem("searchData", JSON.stringify(this.searchModel));
        this.router.navigate(['videodetail/search']); 
+        window.location.reload();
     });
   }
 }
