@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
   	this.model.searchValue = localStorage.getItem("searchvalue");
   	this.resultdata = JSON.parse(localStorage.getItem("searchData"));
   	this.model.createdby = localStorage.getItem("user_fname");
+    // window.location.reload();
   }
    videodetail(id:any)
   {

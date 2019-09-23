@@ -33,8 +33,10 @@ export class TopheaderComponent implements OnInit {
         this.searchModel = package_det.result;
         //this.searchModel.searchKey = value;
         localStorage.setItem("searchData", JSON.stringify(this.searchModel));
-       this.router.navigate(['videodetail/search']); 
-        window.location.reload();
+       this.router.navigate(['videodetail/search']).then(() => {
+          window.location.reload();
+        });
+        //this.window.location.reload();
     });
   }
 }

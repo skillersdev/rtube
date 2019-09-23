@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+
+import { MatVideoModule } from 'mat-video';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { GeneralRoutingModule } from './general-routing.module';
@@ -20,7 +22,8 @@ import { SearchComponent } from './search/search.component';
   imports: [
     CommonModule,
     GeneralRoutingModule,
-    FormsModule
+    FormsModule,
+    MatVideoModule
   ],
   providers: [
     ],
