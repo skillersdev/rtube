@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { MatVideoModule } from 'mat-video';
+// import { MatVideoModule } from 'mat-video';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { GeneralRoutingModule } from './general-routing.module';
@@ -15,15 +15,16 @@ import { BrowesByCategoryComponent } from './browes-by-category/browes-by-catego
 import { FooterComponent } from './footer/footer.component';
 import { TopheaderComponent } from './topheader/topheader.component';
 import { SearchComponent } from './search/search.component';
+import { ChannelslistComponent } from './channelslist/channelslist.component';
 
 
 @NgModule({
-  declarations: [TopbarComponent, HomeComponent, FeaturedVideosComponent, WatchMoviesComponent, MostPopularVideosComponent, NewestVideosComponent, BrowesByCategoryComponent, FooterComponent, TopheaderComponent,DetailVideosComponent, SearchComponent],
+  declarations: [TopbarComponent, HomeComponent, FeaturedVideosComponent, WatchMoviesComponent, MostPopularVideosComponent, NewestVideosComponent, BrowesByCategoryComponent, FooterComponent, TopheaderComponent,DetailVideosComponent, SearchComponent, ChannelslistComponent],
   imports: [
     CommonModule,
     GeneralRoutingModule,
     FormsModule,
-    MatVideoModule
+    // MatVideoModule
   ],
   providers: [
     ],

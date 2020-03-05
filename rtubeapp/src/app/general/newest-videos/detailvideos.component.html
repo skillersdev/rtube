@@ -25,14 +25,17 @@
         <div class="row">
             <div class="large-12 columns">
                 <div class="flex-video widescreen">
-                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/YE7VzlLtp-4" allowfullscreen></iframe> -->
+                    <!-- <iframe width="560" height="315" src="{{videourl}}{{model.video_file}}" allowfullscreen></iframe> -->
 
-                    <!-- <video width="560" height="315" controls>
+                    <video width="560" height="315" controls>
                         <source src="{{videourl}}{{model.video_file}}" type="video/mp4">
                         
                         Your browser does not support HTML5 video.
-                    </video> -->
-                     <mat-video src="{{videourl}}{{model.video_file}}"  style="display: flex;height:315px;" [autoplay]="true"  [fullscreen]="true" [download]="false" color="accent" spinner="spin"></mat-video>
+                    </video>
+
+                  
+                   
+                     <!-- <mat-video src="{{videourl}}{{model.video_file}}"  style="display: flex;height:315px;" [autoplay]="true"  [fullscreen]="true" [download]="false" color="accent" spinner="spin"></mat-video> -->
 
                 </div>
             </div>
