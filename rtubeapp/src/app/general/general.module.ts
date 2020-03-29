@@ -16,10 +16,11 @@ import { FooterComponent } from './footer/footer.component';
 import { TopheaderComponent } from './topheader/topheader.component';
 import { SearchComponent } from './search/search.component';
 import { ChannelslistComponent } from './channelslist/channelslist.component';
+import { ViewchannelComponent } from './viewchannel/viewchannel.component';
 
 
 @NgModule({
-  declarations: [TopbarComponent, HomeComponent, FeaturedVideosComponent, WatchMoviesComponent, MostPopularVideosComponent, NewestVideosComponent, BrowesByCategoryComponent, FooterComponent, TopheaderComponent,DetailVideosComponent, SearchComponent, ChannelslistComponent],
+  declarations: [TopbarComponent, HomeComponent, FeaturedVideosComponent, WatchMoviesComponent, MostPopularVideosComponent, NewestVideosComponent, BrowesByCategoryComponent, FooterComponent, TopheaderComponent,DetailVideosComponent, SearchComponent, ChannelslistComponent, ViewchannelComponent],
   imports: [
     CommonModule,
     GeneralRoutingModule,

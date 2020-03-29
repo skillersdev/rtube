@@ -6,7 +6,7 @@ export class AppSettings{
 	public static IMG_BASE 		 = "http://localhost/ag7dev.git/trunk/api/assets/";
 	public static DOC_BASE 		 = "http://localhost/ag7dev.git/trunk/api/assets/customer_documents/";
 	public static ORDER_DOC_BASE = "http://localhost/ag7dev.git/trunk/api/assets/order_documents/";
-	public static videoUrl = "http://localhost/ag7dev/trunk/api/";
+	public static videoUrl = "http://localhost/ag7dev.git/trunk/api/";
 		 
 	// public static getRtubevideolist= AppSettings.API_BASE + "getrtubevideolist"; 
 	// public static EditvideoDetail = AppSettings.API_BASE+"/editvideodata/";
