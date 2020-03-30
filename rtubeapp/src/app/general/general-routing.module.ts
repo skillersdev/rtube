@@ -24,7 +24,7 @@ const routes: Routes = [
     component: ChannelslistComponent
   },
   {
-    path: 'channel/:id/:id2',
+    path: 'channel/:id1/:id2/:id',
     component: ViewchannelComponent
   },
   

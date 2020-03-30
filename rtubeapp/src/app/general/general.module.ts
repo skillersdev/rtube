@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 // import { MatVideoModule } from 'mat-video';
 import { CommonModule } from '@angular/common';
@@ -18,13 +19,13 @@ import { SearchComponent } from './search/search.component';
 import { ChannelslistComponent } from './channelslist/channelslist.component';
 import { ViewchannelComponent } from './viewchannel/viewchannel.component';
 
-
 @NgModule({
   declarations: [TopbarComponent, HomeComponent, FeaturedVideosComponent, WatchMoviesComponent, MostPopularVideosComponent, NewestVideosComponent, BrowesByCategoryComponent, FooterComponent, TopheaderComponent,DetailVideosComponent, SearchComponent, ChannelslistComponent, ViewchannelComponent],
   imports: [
     CommonModule,
     GeneralRoutingModule,
     FormsModule,
+    HttpClientModule,
     // MatVideoModule
   ],
   providers: [

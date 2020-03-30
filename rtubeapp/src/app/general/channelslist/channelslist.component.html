@@ -39,7 +39,7 @@
                     <div class="row secBg">
                         <div class="large-12 columns">
                             <div class="row column head-text clearfix">
-                                <p class="pull-left">Total Channels :<span>1,038</span></p>
+                                <p class="pull-left">Total Channels :<span>{{model.totalchannels}}</span></p>
                                 <div class="grid-system pull-right show-for-large">
                                     <a class="secondary-button grid-default" href="#"><i class="fa fa-th"></i></a>
                                     <a class="secondary-button grid-medium" href="#"><i class="fa fa-th-large"></i></a>
@@ -49,79 +49,43 @@
                             <div class="tabs-content" data-tabs-content="newVideos">
                                 <div class="tabs-panel is-active" id="new-all">
                                     <div class="row list-group">
-                                        <div class="item large-4 medium-6 columns list">
+                                        <div class="item large-4 medium-6 columns list" *ngFor="let data of channellist">
                                             <div class="post thumb-border">
                                                 <div class="post-thumb">
-                                                    <img src="http://placehold.it/370x220" alt="new video">
+                                                    <img src="{{model.imageBase}}{{data.channel_banner_img}}" alt="new video">
                                                  
                                                 </div>
-                                                <div class="post-des">
-                                                   
-                                                    <h6><a href="single-video-v2.html">There are many variations of passage.</a></h6>
+                                                <div class="post-des">                                                   
+                                                    <h6><a href="single-video-v2.html">
+                                                        {{data.channel_name}}</a></h6>
                                                     <div class="post-stats clearfix">
                                                         <p class="pull-left">
                                                             <i class="fa fa-user"></i>
-                                                            <span><a href="#">admin</a></span>
+                                                            <span>admin</span>
                                                         </p>
                                                         <p class="pull-left">
                                                             <i class="fa fa-clock-o"></i>
-                                                            <span>5 January 16</span>
+                                                            <span>{{data.created_date | date:'dd MMMM y'}}</span>
                                                         </p>
                                                         <p class="pull-left">
                                                             <i class="fa fa-eye"></i>
-                                                            <span>1,862K</span>
+                                                            <span>{{data.videos_count}}</span>
                                                         </p>
                                                     </div>
                                                     <div class="post-summary">
-                                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto sequi nesciunt.</p>
+                                                        <p>{{data.about_channel}}</p>
                                                     </div>
                                                     <div class="post-button">
-                                                        <a href="http://localhost:4200/channel/websitenamecomehere/channelnamecomehere" class="secondary-button"><i class="fa fa-hand-o-right"></i>View Channel</a>
+                                                        <a href="JavaScript:void(0);"(click)="navigateTochanneldetail(data.id,data.website,data.channel_name)" class="secondary-button"><i class="fa fa-hand-o-right"></i>View Channel</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="item large-4 medium-6 columns list">
-                                            <div class="post thumb-border">
-                                                <div class="post-thumb">
-                                                    <img src="http://placehold.it/370x220" alt="new video">
-                                                  
-                                                   
-                                                </div>
-                                                <div class="post-des">
-                                                    <h6><a href="single-video-v2.html">There are many variations of passage.</a></h6>
-                                                    <div class="post-stats clearfix">
-                                                        <p class="pull-left">
-                                                            <i class="fa fa-user"></i>
-                                                            <span><a href="#">admin</a></span>
-                                                        </p>
-                                                        <p class="pull-left">
-                                                            <i class="fa fa-clock-o"></i>
-                                                            <span>5 January 16</span>
-                                                        </p>
-                                                        <p class="pull-left">
-                                                            <i class="fa fa-eye"></i>
-                                                            <span>1,862K</span>
-                                                        </p>
-                                                    </div>
-                                                    <div class="post-summary">
-                                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto sequi nesciunt.</p>
-                                                    </div>
-                                                    <div class="post-button">
-                                                        <a href="single-video-v2.html" class="secondary-button"><i class="fa fa-hand-o-right"></i>View Channel</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                       
-                                       
-                                       
                                     </div>
                                 </div>
                             </div>
                             <div class="text-center loadMore">
-                                <button class="button" type="button">load more</button>
+                                <!-- <button class="button" type="button">load more</button> -->
                             </div>
                         </div>
                     </div>

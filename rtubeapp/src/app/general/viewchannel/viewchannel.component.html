@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="large-12 columns">
                     <h3>Welcome to</h3>
-                    <h1>Sridhar Channel</h1>
+                    <h1>{{editchannelModel.channel_name}}</h1>
                 </div>
             </div>
         </div>
@@ -41,17 +41,17 @@
             <div class="row secBg">
                 <div class="large-12 columns">
                     <div class="profile-author-img">
-                        <img src="http://placehold.it/120x110" alt="profile author img">
+                        <img src="{{editchannelModel.imageBase}}{{editchannelModel.channel_banner_img}}" alt="profile author img">
                     </div>
                     <div class="profile-subscribe">
-                        <span><i class="fa fa-eye"></i>6</span>
+                        <span><i class="fa fa-eye"></i>{{editchannelModel.total_followers}}</span>
                         <button type="submit" name="subscribe" disabled>Views</button>
                     </div>
 
                     <div class="clearfix">
                         <div class="profile-author-name float-left">
-                            <h4>Joseph John</h4>
-                            <p>Created Date : <span>5 January 16</span></p>
+                            <h4>{{editchannelModel.username}}</h4>
+                            <p>Created Date : <span>{{editchannelModel.created_date | date:'dd MMMM y'}}</span></p>
                         </div>
                         <div class="profile-author-stats float-right">
                             <ul class="menu">
@@ -60,35 +60,18 @@
                                         <i class="fa fa-video-camera"></i>
                                     </div>
                                     <div class="li-text float-left">
-                                        <p class="number-text">36</p>
+                                        <p class="number-text">{{editchannelModel.videos_count}}</p>
                                         <span>Videos</span>
                                     </div>
                                 </li>
-                                <!-- <li>
-                                    <div class="icon float-left">
-                                        <i class="fa fa-heart"></i>
-                                    </div>
-                                    <div class="li-text float-left">
-                                        <p class="number-text">50</p>
-                                        <span>favorites</span>
-                                    </div>
-                                </li> 
-                             <li>
-                                    <div class="icon float-left">
-                                        <i class="fa fa-comments-o"></i>
-                                    </div>
-                                    <div class="li-text float-left">
-                                        <p class="number-text">26</p>
-                                        <span>comments</span>
-                                    </div>
-                                </li>-->
+                             
                                 <li>
                                     <div class="icon float-left">
                                         <i class="fa fa-users"></i>
                                     </div>
                                     <div class="li-text float-left">
                                         <p class="number-text">6</p>
-                                        <span>Views</span>
+                                        <span>{{editchannelModel.total_followers}}</span>
                                     </div>
                                 </li>
 
@@ -113,33 +96,13 @@
                             <h4>About Channel</h4>
                         </div>
                         <div class="description">
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                                voluptatem sequi nesciunt.</p>
+                            <p>{{editchannelModel.about_channel}}</p>
 
                             <div class="site profile-margin">
                                 <button><i class="fa fa-globe"></i>Website</button>
-                                <a href="https//roodabatoz.com/website/websitename" class="inner-btn">websitenamecome here</a>
+                                <a href="https//roodabatoz.com/website/{{editchannelModel.website}}" class="inner-btn">{{editchannelModel.website}}</a>
                             </div>
-                            <!-- <div class="email profile-margin">
-                                <button><i class="fa fa-envelope"></i>Email</button>
-                                <span class="inner-btn">support@betube.com</span>
-                            </div>
-                            <div class="phone profile-margin">
-                                <button><i class="fa fa-phone"></i>Phone</button>
-                                <span class="inner-btn">92-568-748</span>
-                            </div>
-                            <div class="socialLinks profile-margin">
-                                <button><i class="fa fa-share-alt"></i>get socialize</button>
-                                <a href="#" class="inner-btn"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="inner-btn"><i class="fa fa-twitter"></i></a>
-                                <a href="#" class="inner-btn"><i class="fa fa-google-plus"></i></a>
-                                <a href="#" class="inner-btn"><i class="fa fa-flickr"></i></a>
-                            </div> -->
-
-
+                         
                         </div>
                     </div>
                 </div>
@@ -161,40 +124,46 @@
                             <div class="tabs-panel is-active" id="new-all">
                                 <div class="row list-group">
 
-                                    <div class="item large-4 medium-6 columns group-item-grid-default">
+                                    <div class="item large-4 medium-6 columns group-item-grid-default" *ngFor="let details of videodetails">
                                         <div class="post thumb-border">
-                                            <div class="post-thumb">
-                                                <img src="http://placehold.it/370x220" alt="new video">
-                                                <a href="#" class="hover-posts">
-                                                    <span><i class="fa fa-play"></i>Watch Video</span>
-                                                </a>
+                                            <div class="">
+                                                    <div class="video">
+                                                    <video controls (click)="toggleVideo()" #videoPlayer>
+                                                        <source src="{{editchannelModel.imageBase}}{{details.video_file}}" type="video/mp4" />
+                                                        Browser not supported
+                                                    </video>
+                                                </div>
+                                                <!-- <img src="{{editchannelModel.imageBase}}{{details.preview_image}}" alt="new video"> -->
+                                                <!-- <a href="#" class="hover-posts"> -->
+                                                    <!-- <span><i class="fa fa-play"></i>Watch Video</span> -->
+                                                   
+                                                    <!-- <video width="320" height="240" controls>
+                                                            <source src="{{editchannelModel.imageBase}}{{details.video_file}}" type="video/mp4">
+                                                            <source src="{{editchannelModel.imageBase}}{{details.video_file}}" type="video/ogg">
+                                                          Your browser does not support the video tag.
+                                                    </video>                                                      -->
+                                                <!-- </a> -->
                                               
                                             </div>
                                             <div class="post-des">
-                                                <h5>video title come here</h5>
+                                                <h5>{{details.title}}</h5>
                                                 <h6><a href="#">There are many variations of passage.</a></h6>
                                                 <div class="post-stats clearfix">
                                                     <p class="pull-left">
                                                         <i class="fa fa-user"></i>
-                                                        <span><a href="#">admin</a></span>
+                                                        <span>{{editchannelModel.username}}</span>
                                                     </p>
                                                     <p class="pull-left">
                                                         <i class="fa fa-clock-o"></i>
-                                                        <span>5 January 16</span>
+                                                        <span>{{details.created_date | date:'dd MMMM y'}}</span>
                                                     </p>
                                                     <p class="pull-left">
                                                         <i class="fa fa-eye"></i>
-                                                        <span>1,862K</span>
+                                                        <span>33</span>
                                                     </p>
                                                 </div>
                                                 <div class="post-summary">
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                                                        quae ab illo inventore veritatis et quasi architecto beatae
-                                                        vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                                                        voluptas sit aspernatur aut odit aut fugit, sed quia
-                                                        consequuntur magni dolores eos qui ratione voluptatem sequi
-                                                        nesciunt.</p>
+                                                    <p>{{details.description}}</p>
                                                 </div>
                                                 <div class="post-button">
                                                     <a href="#" class="secondary-button"><i
@@ -203,138 +172,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="item large-4 medium-6 columns group-item-grid-default">
-                                        <div class="post thumb-border">
-                                            <div class="post-thumb">
-                                                <img src="http://placehold.it/370x220" alt="new video">
-                                                <a href="#" class="hover-posts">
-                                                    <span><i class="fa fa-play"></i>Watch Video</span>
-                                                </a>
-                                               
-                                            </div>
-                                            <div class="post-des">
-                                                <h5>video title come here</h5>
-                                                <h6><a href="#">There are many variations of passage.</a></h6>
-                                                <div class="post-stats clearfix">
-                                                    <p class="pull-left">
-                                                        <i class="fa fa-user"></i>
-                                                        <span><a href="#">admin</a></span>
-                                                    </p>
-                                                    <p class="pull-left">
-                                                        <i class="fa fa-clock-o"></i>
-                                                        <span>5 January 16</span>
-                                                    </p>
-                                                    <p class="pull-left">
-                                                        <i class="fa fa-eye"></i>
-                                                        <span>1,862K</span>
-                                                    </p>
-                                                </div>
-                                                <div class="post-summary">
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                                                        quae ab illo inventore veritatis et quasi architecto beatae
-                                                        vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                                                        voluptas sit aspernatur aut odit aut fugit, sed quia
-                                                        consequuntur magni dolores eos qui ratione voluptatem sequi
-                                                        nesciunt.</p>
-                                                </div>
-                                                <div class="post-button">
-                                                    <a href="#" class="secondary-button"><i
-                                                            class="fa fa-play-circle"></i>watch video</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item large-4 medium-6 columns group-item-grid-default">
-                                        <div class="post thumb-border">
-                                            <div class="post-thumb">
-                                                <img src="http://placehold.it/370x220" alt="new video">
-                                                <a href="#" class="hover-posts">
-                                                    <span><i class="fa fa-play"></i>Watch Video</span>
-                                                </a>
-                                                
-                                            </div>
-                                            <div class="post-des">
-                                                <h5>video title come here</h5>
-                                                <h6><a href="#">There are many variations of passage.</a></h6>
-                                                <div class="post-stats clearfix">
-                                                    <p class="pull-left">
-                                                        <i class="fa fa-user"></i>
-                                                        <span><a href="#">admin</a></span>
-                                                    </p>
-                                                    <p class="pull-left">
-                                                        <i class="fa fa-clock-o"></i>
-                                                        <span>5 January 16</span>
-                                                    </p>
-                                                    <p class="pull-left">
-                                                        <i class="fa fa-eye"></i>
-                                                        <span>1,862K</span>
-                                                    </p>
-                                                </div>
-                                                <div class="post-summary">
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                                                        quae ab illo inventore veritatis et quasi architecto beatae
-                                                        vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                                                        voluptas sit aspernatur aut odit aut fugit, sed quia
-                                                        consequuntur magni dolores eos qui ratione voluptatem sequi
-                                                        nesciunt.</p>
-                                                </div>
-                                                <div class="post-button">
-                                                    <a href="#" class="secondary-button"><i
-                                                            class="fa fa-play-circle"></i>watch video</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                   
-                                    <div class="item large-4 medium-6 columns group-item-grid-default end">
-                                        <div class="post thumb-border">
-                                            <div class="post-thumb">
-                                                <img src="http://placehold.it/370x220" alt="new video">
-                                                <a href="#" class="hover-posts">
-                                                    <span><i class="fa fa-play"></i>Watch Video</span>
-                                                </a>
-                                              
-                                            </div>
-                                            <div class="post-des">
-                                                <h5>video title come here</h5>
-                                                <h6><a href="#">There are many variations of passage.</a></h6>
-                                                <div class="post-stats clearfix">
-                                                    <p class="pull-left">
-                                                        <i class="fa fa-user"></i>
-                                                        <span><a href="#">admin</a></span>
-                                                    </p>
-                                                    <p class="pull-left">
-                                                        <i class="fa fa-clock-o"></i>
-                                                        <span>5 January 16</span>
-                                                    </p>
-                                                    <p class="pull-left">
-                                                        <i class="fa fa-eye"></i>
-                                                        <span>1,862K</span>
-                                                    </p>
-                                                </div>
-                                                <div class="post-summary">
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                                                        quae ab illo inventore veritatis et quasi architecto beatae
-                                                        vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                                                        voluptas sit aspernatur aut odit aut fugit, sed quia
-                                                        consequuntur magni dolores eos qui ratione voluptatem sequi
-                                                        nesciunt.</p>
-                                                </div>
-                                                <div class="post-button">
-                                                    <a href="#" class="secondary-button"><i
-                                                            class="fa fa-play-circle"></i>watch video</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div *ngIf="videodetails.length==0">
+                                        <span>No videos found</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="text-center row-btn">
-                            <a class="button radius" href="#">Load More</a>
+                            <!-- <a class="button radius" href="#">Load More</a> -->
                         </div>
                     </div>
                 </div>
