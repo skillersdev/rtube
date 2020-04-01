@@ -51,17 +51,17 @@
                                     <div class="row list-group">
                                         <div class="item large-4 medium-6 columns list" *ngFor="let data of channellist">
                                             <div class="post thumb-border">
-                                                <div class="post-thumb">
+                                                <div class="post-thumb cus-pointer" (click)="navigateTochanneldetail(data.id,data.website,data.channel_name)">
                                                     <img src="{{model.imageBase}}{{data.channel_banner_img}}" alt="new video">
                                                  
                                                 </div>
-                                                <div class="post-des">                                                   
-                                                    <h6><a href="single-video-v2.html">
-                                                        {{data.channel_name}}</a></h6>
+                                                <div class="post-des cus-pointer" (click)="navigateTochanneldetail(data.id,data.website,data.channel_name)">                                                   
+                                                    <h6>
+                                                        {{data.channel_name}}</h6>
                                                     <div class="post-stats clearfix">
                                                         <p class="pull-left">
                                                             <i class="fa fa-user"></i>
-                                                            <span>admin</span>
+                                                            <span>Created By:{{data.username}}</span>
                                                         </p>
                                                         <p class="pull-left">
                                                             <i class="fa fa-clock-o"></i>
@@ -69,14 +69,14 @@
                                                         </p>
                                                         <p class="pull-left">
                                                             <i class="fa fa-eye"></i>
-                                                            <span>{{data.videos_count}}</span>
+                                                            <span>{{data.videos_count}}</span> 
                                                         </p>
                                                     </div>
                                                     <div class="post-summary">
                                                         <p>{{data.about_channel}}</p>
                                                     </div>
                                                     <div class="post-button">
-                                                        <a href="JavaScript:void(0);"(click)="navigateTochanneldetail(data.id,data.website,data.channel_name)" class="secondary-button"><i class="fa fa-hand-o-right"></i>View Channel</a>
+                                                        <a href="JavaScript:void(0);"(click)="navigateTochanneldetail(data.id,data.website,data.channel_name)" class="secondary-button"><i class="fa fa-hand-o-right"></i>Views Channel</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -121,78 +121,26 @@
                                 <div class="widgetTitle">
                                     <h5>Recent post videos</h5>
                                 </div>
-                                <div class="widgetContent">
+                                <div class="widgetContent" *ngFor="let rvideolist of videolist">
                                     <div class="media-object stack-for-small">
                                         <div class="media-object-section">
                                             <div class="recent-img">
-                                                <img src= "http://placehold.it/120x80" alt="recent">
-                                                <a href="#" class="hover-posts">
-                                                    <span><i class="fa fa-play"></i></span>
-                                                </a>
+                                                <img src="{{model.imageBase}}{{rvideolist.preview_image}}" alt="new video"> 
+                                                <a  href="javascript:void(0);" class="hover-posts" (click)="videodetail(rvideolist.id)">
+                                                    <span><i class="fa fa-play"></i>Watch Video</span>
+                                                    </a>
                                             </div>
                                         </div>
-                                        <div class="media-object-section">
+                                        <div class="media-object-section cus-pointer" (click)="videodetail(rvideolist.id)">
                                             <div class="media-content">
-                                                <h6><a href="#">The lorem Ipsumbeen the industry's standard.</a></h6>
-                                                <p><i class="fa fa-user"></i><span>admin</span><i class="fa fa-clock-o"></i><span>5 january 16</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="media-object stack-for-small">
-                                        <div class="media-object-section">
-                                            <div class="recent-img">
-                                                <img src= "http://placehold.it/120x80" alt="recent">
-                                                <a href="#" class="hover-posts">
-                                                    <span><i class="fa fa-play"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="media-object-section">
-                                            <div class="media-content">
-                                                <h6><a href="#">The lorem Ipsumbeen the industry's standard.</a></h6>
-                                                <p><i class="fa fa-user"></i><span>admin</span><i class="fa fa-clock-o"></i><span>5 january 16</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="media-object stack-for-small">
-                                        <div class="media-object-section">
-                                            <div class="recent-img">
-                                                <img src= "http://placehold.it/120x80" alt="recent">
-                                                <a href="#" class="hover-posts">
-                                                    <span><i class="fa fa-play"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="media-object-section">
-                                            <div class="media-content">
-                                                <h6><a href="#">The lorem Ipsumbeen the industry's standard.</a></h6>
-                                                <p><i class="fa fa-user"></i><span>admin</span><i class="fa fa-clock-o"></i><span>5 january 16</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="media-object stack-for-small">
-                                        <div class="media-object-section">
-                                            <div class="recent-img">
-                                                <img src= "http://placehold.it/120x80" alt="recent">
-                                                <a href="#" class="hover-posts">
-                                                    <span><i class="fa fa-play"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="media-object-section">
-                                            <div class="media-content">
-                                                <h6><a href="#">The lorem Ipsumbeen the industry's standard.</a></h6>
-                                                <p><i class="fa fa-user"></i><span>admin</span><i class="fa fa-clock-o"></i><span>5 january 16</span></p>
+                                                <h6>{{rvideolist.description}}</h6>
+                                                <p><i class="fa fa-user"></i><span>{{rvideolist.username}}</span><i class="fa fa-clock-o"></i><span>{{rvideolist.created_date}}</span></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div><!-- End Recent post videos -->
-
-                     
-                    
-                     
 
                     </div>
                 </aside>

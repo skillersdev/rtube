@@ -44,7 +44,7 @@
                         <img src="{{editchannelModel.imageBase}}{{editchannelModel.channel_banner_img}}" alt="profile author img">
                     </div>
                     <div class="profile-subscribe">
-                        <span><i class="fa fa-eye"></i>{{editchannelModel.total_followers}}</span>
+                        <span><i class="fa fa-eye"></i>{{editchannelModel.total_views}}</span>
                         <button type="submit" name="subscribe" disabled>Views</button>
                     </div>
 
@@ -67,11 +67,10 @@
                              
                                 <li>
                                     <div class="icon float-left">
-                                        <i class="fa fa-users"></i>
+                                        <i class="fa fa-eye"></i>
                                     </div>
                                     <div class="li-text float-left">
-                                        <p class="number-text">6</p>
-                                        <span>{{editchannelModel.total_followers}}</span>
+                                        <p class="number-text">{{editchannelModel.total_views}}</p>                 <span>Views</span>                      
                                     </div>
                                 </li>
 
@@ -100,7 +99,7 @@
 
                             <div class="site profile-margin">
                                 <button><i class="fa fa-globe"></i>Website</button>
-                                <a href="https//roodabatoz.com/website/{{editchannelModel.website}}" class="inner-btn">{{editchannelModel.website}}</a>
+                                <a href="https://roodabatoz.com/website/{{editchannelModel.website}}" class="inner-btn" target="blank">{{editchannelModel.website}}</a>
                             </div>
                          
                         </div>
@@ -126,28 +125,22 @@
 
                                     <div class="item large-4 medium-6 columns group-item-grid-default" *ngFor="let details of videodetails">
                                         <div class="post thumb-border">
-                                            <div class="">
-                                                    <div class="video">
-                                                    <video controls (click)="toggleVideo()" #videoPlayer>
+                                            <div class="post-thumb">
+                                                    <!-- <div class="video">
+                                                    <video controls  #videoPlayer>
                                                         <source src="{{editchannelModel.imageBase}}{{details.video_file}}" type="video/mp4" />
                                                         Browser not supported
                                                     </video>
-                                                </div>
-                                                <!-- <img src="{{editchannelModel.imageBase}}{{details.preview_image}}" alt="new video"> -->
-                                                <!-- <a href="#" class="hover-posts"> -->
-                                                    <!-- <span><i class="fa fa-play"></i>Watch Video</span> -->
-                                                   
-                                                    <!-- <video width="320" height="240" controls>
-                                                            <source src="{{editchannelModel.imageBase}}{{details.video_file}}" type="video/mp4">
-                                                            <source src="{{editchannelModel.imageBase}}{{details.video_file}}" type="video/ogg">
-                                                          Your browser does not support the video tag.
-                                                    </video>                                                      -->
-                                                <!-- </a> -->
+                                                </div> -->
+                                                <img src="{{editchannelModel.imageBase}}{{details.preview_image}}" alt="new video"> 
+                                                <a  href="javascript:void(0);" class="hover-posts" (click)="videodetail(details.id)">
+                                                    <span><i class="fa fa-play"></i>Watch Video</span>
+                                                 </a>
                                               
                                             </div>
-                                            <div class="post-des">
+                                            <div class="post-des cus-pointer" (click)="videodetail(details.id)">
                                                 <h5>{{details.title}}</h5>
-                                                <h6><a href="#">There are many variations of passage.</a></h6>
+                                                <h6><a href="#">{{details.guideschedule}}</a></h6>
                                                 <div class="post-stats clearfix">
                                                     <p class="pull-left">
                                                         <i class="fa fa-user"></i>
@@ -166,8 +159,8 @@
                                                     <p>{{details.description}}</p>
                                                 </div>
                                                 <div class="post-button">
-                                                    <a href="#" class="secondary-button"><i
-                                                            class="fa fa-play-circle"></i>watch video</a>
+                                                    <a href="javascript:void(0);" (click)="videodetail(details.id)" class="secondary-button" >
+                                                        <i class="fa fa-play-circle"></i>watch video</a>
                                                 </div>
                                             </div>
                                         </div>

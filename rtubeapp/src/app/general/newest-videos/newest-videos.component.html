@@ -48,7 +48,7 @@
                                     <a href="javascript:void(0);" (click)="videodetail(data.id)" class="hover-posts">
                                         <span><i class="fa fa-play"></i>Watch Video</span>
                                     </a>
-                                    <div class="video-stats clearfix">
+                                    <!-- <div class="video-stats clearfix">
                                         <div class="thumb-stats pull-left">
                                             <h6>HD</h6>
                                         </div>
@@ -59,10 +59,10 @@
                                         <div class="thumb-stats pull-right">
                                             <span>05:56</span>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
-                                <div class="post-des">
-                                    <h6><a href="single-video-v2.html">{{data.title}}</a></h6>
+                                <div class="post-des" (click)="videodetail(data.id)">
+                                    <h6><a href="javascript:void(0);" >{{data.title}}</a></h6>
                                     <div class="post-stats clearfix">
                                         <p class="pull-left">
                                             <i class="fa fa-user"></i>
@@ -81,7 +81,7 @@
                                         <p>{{data.description}}</p>
                                     </div>
                                     <div class="post-button">
-                                        <a href="single-video-v2.html" class="secondary-button"><i class="fa fa-play-circle"></i>watch video</a>
+                                        <a href="javascript:void(0);" class="secondary-button"><i class="fa fa-play-circle"></i>watch video</a>
                                     </div>
                                 </div>
                             </div>

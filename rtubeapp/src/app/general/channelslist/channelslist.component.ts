@@ -15,6 +15,7 @@ export class ChannelslistComponent implements OnInit {
   userdata:any={};
   model:any={};
   channellist:Array<Object>;
+  videolist:Array<Object>;
   constructor(private loginService: LoginService,private CommonService: CommonService,private router: Router,private http:Http) { 
     document.body.className="theme-red";
 
@@ -29,10 +30,24 @@ export class ChannelslistComponent implements OnInit {
       this.channellist=resultdata.result;  
       this.model.totalchannels = resultdata.result.length;  
     });
+    /*Roodab vidos category*/
+    this.CommonService.getdata(AppSettings.getRtubevideolist)
+    .subscribe(det =>{    
+        if(det.result!="")
+        { 
+          this.videolist=det.result;
+        } 
+         
+    });
   }
   navigateTochanneldetail(channelId:any,website:any,channelName:any)
   {
     this.router.navigate(['channel/'+website+'/'+channelName,channelId])
+  }
+
+  videodetail(id:any)
+  {
+    this.router.navigate(['videodetail/detail', id]);
   }
 
   // href="http://localhost:4200/channel/websitenamecomehere/channelnamecomehere"

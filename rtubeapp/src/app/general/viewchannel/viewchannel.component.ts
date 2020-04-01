@@ -19,6 +19,8 @@ export class ViewchannelComponent implements OnInit {
     private route: ActivatedRoute,private router: Router,private http:Http) { }
 
   ngOnInit() {
+    this.editchannelModel.websiteurl = AppSettings.weburl;
+    this.editchannelModel.total_views=0;
     this.videodetails=[];
     this.route.params.subscribe(params => {
       this.channelId = +params['id']; // (+) converts string 'id' to a number
@@ -34,5 +36,14 @@ export class ViewchannelComponent implements OnInit {
           this.editchannelModel.imageBase = AppSettings.IMAGE_BASE;               
         });
   }
+  videodetail(id:any)
+  {
+    this.router.navigate(['videodetail/detail', id]);
+  }
+  // navigateToWebsite(websiteName:any)
+  // {
+  //   let url= this.router.createUrlTree(["/website/"+websiteName]);
+  //   window.open(url.toString(), '_blank');
+  // }
 
 }

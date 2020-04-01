@@ -14,11 +14,12 @@ export class AppSettings{
 
 	public static URL_BASE 	 	 = "https://roodabatoz.com/api";
 	public static IMAGE_BASE 	 = "https://roodabatoz.com/api/";
- 	public static API_BASE 		 = "https://roodabatoz.com/api";  
+ 	public static API_BASE 		 = "https://roodabatoz.com/api/";  
 	public static IMG_BASE 		 = "https://roodabatoz.com/api/assets/";
 	public static DOC_BASE 		 = "https://roodabatoz.com/api/assets/customer_documents/";
 	public static ORDER_DOC_BASE = "https://roodabatoz.com/api/assets/order_documents/";
 	public static videoUrl = "https://roodabatoz.com/api/";
+	public static weburl ="https//roodabatoz.com/website/";
 		 
 	public static getRtubevideolist= AppSettings.API_BASE + "getrtubevideolist"; 
 	public static EditvideoDetail = AppSettings.API_BASE+"/editvideodetail/";

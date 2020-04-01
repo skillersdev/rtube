@@ -12,7 +12,7 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 export class DetailVideosComponent implements OnInit {
   videolist:Array<Object>;
   videourl:string=AppSettings.videoUrl;
-  websiteurl:string=AppSettings.API_BASE;
+  websiteurl:string=AppSettings.IMAGE_BASE;
   FetchvideodataRestApiUrl: string = AppSettings.EditvideoDetail;
   alldata: any = {};
   private sub: any;
