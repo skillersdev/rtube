@@ -10,11 +10,8 @@
                 <nav aria-label="You are here:" role="navigation">
                     <ul class="breadcrumbs">
                         <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-                        <li><a href="#">Animation</a></li>
-                        <li class="disabled">Gene Splicing</li>
-                        <li>
-                            <span class="show-for-sr">Current: </span> Comedy video
-                        </li>
+                        <li><a href="#">{{model.title}}</a></li>
+                       
                     </ul>
                 </nav>
             </div>
@@ -29,6 +26,8 @@
 
                     <video width="560" height="315" controls>
                         <source src="{{videourl}}{{model.video_file}}" type="video/mp4">
+                        <source src="{{videourl}}{{model.video_file}}" type="video/webm">
+                        <source src="{{videourl}}{{model.video_file}}" type="video/ogg">
                         
                         Your browser does not support HTML5 video.
                     </video>

@@ -5,6 +5,7 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { AppSettings } from '../../appSettings';
 import { LoginService } from '../../services/login.service';
 import { CommonService } from '../../services/common.service';
+//import { url } from 'inspector';
 
 @Component({
   selector: 'app-viewchannel',
@@ -22,10 +23,7 @@ export class ViewchannelComponent implements OnInit {
     this.editchannelModel.websiteurl = AppSettings.weburl;
     this.editchannelModel.total_views=0;
     this.videodetails=[];
-    this.route.params.subscribe(params => {
-      this.channelId = +params['id']; // (+) converts string 'id' to a number
-        this.getchannelDetails(this.channelId);   
-      });
+    this.getchannelDetails(localStorage.getItem('channelId'));
   }
   getchannelDetails(channelId:any)
   {
@@ -39,6 +37,11 @@ export class ViewchannelComponent implements OnInit {
   videodetail(id:any)
   {
     this.router.navigate(['videodetail/detail', id]);
+  }
+  setBackground()
+  {
+    let styles = {'background-position':'center center','background-repeat':'no-repeat','background-attachment':'fixed','background-size':'cover','background-image':'url('+this.editchannelModel.imageBase+this.editchannelModel.channel_banner_img+')'};   
+    return styles;
   }
   // navigateToWebsite(websiteName:any)
   // {

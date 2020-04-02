@@ -42,7 +42,8 @@ export class ChannelslistComponent implements OnInit {
   }
   navigateTochanneldetail(channelId:any,website:any,channelName:any)
   {
-    this.router.navigate(['channel/'+website+'/'+channelName,channelId])
+    localStorage.setItem('channelId',channelId);
+    this.router.navigate(['channel',website,channelName])
   }
 
   videodetail(id:any)

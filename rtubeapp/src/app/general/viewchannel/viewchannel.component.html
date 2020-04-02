@@ -28,7 +28,7 @@
     <!--pass dynamic image url  ends-->
 
     <!-- profile top section -->
-    <section class="topProfile">
+    <section class="" [ngStyle]="setBackground()">
         <div class="main-text text-center">
             <div class="row">
                 <div class="large-12 columns">
@@ -166,7 +166,7 @@
                                         </div>
                                     </div>
                                     <div *ngIf="videodetails.length==0">
-                                        <span>No videos found</span>
+                                        <span style="margin-left:20px;">No videos found</span>
                                     </div>
                                 </div>
                             </div>
