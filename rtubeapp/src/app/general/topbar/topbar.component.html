@@ -6,18 +6,18 @@
             <span data-toggle="offCanvas-responsive"><i class="fa fa-times"></i></span>
         </div>
         <ul class="vertical menu off-menu" data-responsive-menu="drilldown">
-            <li class="has-submenu">
-                <a href="#"><i class="fa fa-home"></i>Home</a>
-              
+            <li class="has-submenu active">
+                <a [routerLink]="['/']"><i class="fa fa-home"></i>Home</a>
+               
             </li>
-            
-            <li><a href="#"><i class="fa fa-th"></i>category</a></li>
+          
+            <li><a [routerLink]="['/channels']"><i class="fa fa-th"></i>Channels</a></li>
             
            
-            <li><a href="#"><i class="fa fa-user"></i>about</a></li>
-            <li><a href="#"><i class="fa fa-envelope"></i>contact</a></li>
+            <!-- <li><a href="#"><i class="fa fa-user"></i>about</a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i>contact</a></li> -->
         </ul>
-        <div class="responsive-search">
+        <!-- <div class="responsive-search">
             <form method="post">
                 <div class="input-group">
                     <input class="input-group-field" type="text" placeholder="search Here">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
             </form>
-        </div>
+        </div> -->
 
         
       

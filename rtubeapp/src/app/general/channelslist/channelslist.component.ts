@@ -25,10 +25,12 @@ export class ChannelslistComponent implements OnInit {
     this.model.totalchannels = 0;
     this.userdata.usergroup =1;
     this.model.imageBase = AppSettings.IMAGE_BASE;
+    (<HTMLElement>document.querySelector('.preloader')).style.visibility = "visible";
     this.CommonService.insertdata(AppSettings.getChannellist,this.userdata)
     .subscribe(resultdata =>{   
       this.channellist=resultdata.result;  
       this.model.totalchannels = resultdata.result.length;  
+      (<HTMLElement>document.querySelector('.preloader')).style.visibility = "hidden";
     });
     /*Roodab vidos category*/
     this.CommonService.getdata(AppSettings.getRtubevideolist)

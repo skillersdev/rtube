@@ -27,11 +27,13 @@ export class ViewchannelComponent implements OnInit {
   }
   getchannelDetails(channelId:any)
   {
+    (<HTMLElement>document.querySelector('.preloader')).style.visibility = "visible";
     this.CommonService.editdata(AppSettings.editchannel,channelId)
         .subscribe(resultdata =>{   
           this.editchannelModel = resultdata.result;  
           this.videodetails = resultdata.total_videos;  
-          this.editchannelModel.imageBase = AppSettings.IMAGE_BASE;               
+          this.editchannelModel.imageBase = AppSettings.IMAGE_BASE;
+          (<HTMLElement>document.querySelector('.preloader')).style.visibility = "hidden";               
         });
   }
   videodetail(id:any)

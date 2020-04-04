@@ -11,7 +11,7 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 })
 export class NewestVideosComponent implements OnInit {
   videolist:Array<Object>;
-  searchModel:any={};
+  searchModel:any={}; 
   websiteurl:string=AppSettings.API_BASE;
   constructor(
     private CommonService:CommonService,
@@ -19,13 +19,14 @@ export class NewestVideosComponent implements OnInit {
     private http:Http) { }
 
   ngOnInit() {
-
+    (<HTMLElement>document.querySelector('.preloader')).style.visibility = "visible";
      this.CommonService.getdata(AppSettings.getRtubevideolist)
         .subscribe(det =>{
           //return false;
             if(det.result!="")
             { 
               this.videolist=det.result;
+              (<HTMLElement>document.querySelector('.preloader')).style.visibility = "hidden";
              // this.loginService.viewCommontdataTable('dataTable','adsinfo_table');
             } 
              
