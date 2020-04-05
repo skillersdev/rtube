@@ -23,12 +23,18 @@ export class ViewchannelComponent implements OnInit {
     this.editchannelModel.websiteurl = AppSettings.weburl;
     this.editchannelModel.total_views=0;
     this.videodetails=[];
-    this.getchannelDetails(localStorage.getItem('channelId'));
+    this.route.paramMap.subscribe(params => {
+      this.editchannelModel.currentwebsite = params.get('id1'); // (+) converts string 'id' to a number
+      this.editchannelModel.currentchannel = params.get('id2'); // (+) converts string 'id' to a number
+   
+      });
+
+    this.getchannelDetails();
   }
-  getchannelDetails(channelId:any)
+  getchannelDetails()
   {
     (<HTMLElement>document.querySelector('.preloader')).style.visibility = "visible";
-    this.CommonService.editdata(AppSettings.editchannel,channelId)
+    this.CommonService.insertdata(AppSettings.editchannel,this.editchannelModel)
         .subscribe(resultdata =>{   
           this.editchannelModel = resultdata.result;  
           this.videodetails = resultdata.total_videos;  

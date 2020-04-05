@@ -27,7 +27,7 @@ export class AppSettings{
 
 
 	public static getChannellist= AppSettings.API_BASE+"/getchannellist";
-	public static editchannel= AppSettings.API_BASE+"/editchannel/";
+	public static editchannel= AppSettings.API_BASE+"/editchannel";
 
 
 	
