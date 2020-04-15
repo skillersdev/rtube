@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppSettings } from '../../appSettings';
 import { Routes,Router,RouterModule}  from '@angular/router';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { CommonService} from '../../services/common.service';
 
 @Component({
   selector: 'app-videosearch',
@@ -11,9 +12,10 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 export class VideosearchComponent implements OnInit {
   resultdata:any={};
   model:any={};
+  videolist:Array<Object>;
   channellist:Array<Object>;
   websiteurl:string=AppSettings.API_BASE;
-  constructor(private router: Router) { }
+  constructor(private router: Router,private CommonService:CommonService) { }
 
   ngOnInit() {
     this.model.totalchannels = 0;
@@ -23,6 +25,17 @@ export class VideosearchComponent implements OnInit {
     this.channellist = JSON.parse(localStorage.getItem("searchData"));
     this.model.totalchannels = this.channellist.length;
     this.model.createdby = localStorage.getItem("user_fname");
+    this.CommonService.getdata(AppSettings.getRtubevideolist)
+        .subscribe(det =>{
+          //return false;
+            if(det.result!="")
+            { 
+              this.videolist=det.result;
+              (<HTMLElement>document.querySelector('.preloader')).style.visibility = "hidden";
+             // this.loginService.viewCommontdataTable('dataTable','adsinfo_table');
+            } 
+             
+        });
   }
   videodetail(id:any)
   {
