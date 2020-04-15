@@ -23,7 +23,9 @@ export class AppSettings{
 		 
 	public static getRtubevideolist= AppSettings.API_BASE + "getrtubevideolist"; 
 	public static EditvideoDetail = AppSettings.API_BASE+"/editvideodetail/";
+	public static likevideodataRestApiUrl= AppSettings.API_BASE+"/likevideodetail/";
 	public static getSearchresultAPI= AppSettings.API_BASE+"/getvideopagesearchresult";
+	public static getchannelSearchresultAPI= AppSettings.API_BASE+"/getchannelpagesearchresult";
 
 
 	public static getChannellist= AppSettings.API_BASE+"/getchannellist";

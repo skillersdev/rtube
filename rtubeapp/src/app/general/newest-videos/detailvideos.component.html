@@ -65,7 +65,7 @@
                                         <h4>{{model.title}}</h4>
                                         <p>
                                             <span><i class="fa fa-clock-o"></i>{{model.created_date | date:'d MMMM y'}}</span>
-                                            <span><i class="fa fa-eye"></i>1,862K</span>
+                                            <span><i class="fa fa-eye"></i>{{model.total_views}}</span>
                                            <!--  <span><i class="fa fa-thumbs-o-up"></i>10</span>
                                             <span><i class="fa fa-thumbs-o-down"></i>1000</span> -->
                                             <!-- <span><i class="fa fa-commenting"></i>8</span> -->
@@ -82,8 +82,8 @@
                                         <!-- <form method="post">
                                             <button type="submit" name="fav"><i class="fa fa-heart"></i>Add to</button>
                                         </form> -->
-                                        <a href="#" class="secondary-button"><i class="fa fa-thumbs-o-up"></i></a>
-                                        <a href="#" class="secondary-button"><i class="fa fa-thumbs-o-down"></i></a>
+                                        <a href="javascript:void(0);" class="secondary-button" (click)="videolike()"><i class="fa fa-thumbs-o-up"></i></a>{{model.total_likes}}
+                                        <!-- <a href="#" class="secondary-button"><i class="fa fa-thumbs-o-down"></i></a> -->
 
                                        
                                     </div>
@@ -113,10 +113,10 @@
                                 <a href="#" class="inner-btn">comedy</a>
                             </div> -->
                             <div class="tags">
-                                <button><i class="fa fa-tags"></i>Tags</button>
+                                <!-- <button><i class="fa fa-tags"></i>Tags</button>
                                 <a href="javascript:void(0);" class="inner-btn" *ngFor="let tagData of model.tags_list">
                                     {{tagData}}
-                                    </a>
+                                    </a> -->
                                 
                                 <a href="#" class="inner-btn">Movies</a>
                             </div>

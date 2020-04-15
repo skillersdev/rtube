@@ -25,7 +25,7 @@ export class DetailVideosComponent implements OnInit {
     private http:Http) { }
 
   ngOnInit() {
-
+    this.model.total_likes=0;
   	this.sub = this.route.params.subscribe(params => {
         this.id = +params['id']; // (+) converts string 'id' to a number
         this.edituser(this.id);
@@ -41,6 +41,19 @@ export class DetailVideosComponent implements OnInit {
           this.model = resultdata.result.video_det;
           
         });
+  }
+  videolike()
+  {
+    this.CommonService.editdata(AppSettings.likevideodataRestApiUrl,this.id)
+    .subscribe(resultdata =>{ 
+      if(resultdata.likes)
+      {
+        this.model.total_likes=resultdata.likes;
+      }else if(resultdata.status!=='failure' && this.model.total_likes>0){
+        this.model.total_likes=this.model.total_likes
+      }
+      // this.model.total_likes=(resultdata.likes || this.model.total_likes>0)?resultdata.likes:0;     
+    });
   }
 
 }

@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 import { LoginService } from './services/login.service';
 import { CommonService } from './services/common.service';
 import { EventEmitterService} from './services/event-emitter.service';
+import { VideosearchComponent } from './videosearch/videosearch.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    VideosearchComponent,
 
   ],
   imports: [

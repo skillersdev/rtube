@@ -5,6 +5,7 @@ import { DetailVideosComponent } from './newest-videos/detailvideos.component';
 import { SearchComponent } from './search/search.component';
 import { ChannelslistComponent } from './channelslist/channelslist.component';
 import { ViewchannelComponent } from './viewchannel/viewchannel.component';
+import { VideosearchComponent } from './videosearch/videosearch.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'channel/:id1/:id2',
     component: ViewchannelComponent
+  },
+  {
+    path: 'channelsearch',
+    component: VideosearchComponent
   },
   
 ];

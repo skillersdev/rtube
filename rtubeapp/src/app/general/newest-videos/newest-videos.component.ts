@@ -19,6 +19,7 @@ export class NewestVideosComponent implements OnInit {
     private http:Http) { }
 
   ngOnInit() {
+    this.videolist=[];
     (<HTMLElement>document.querySelector('.preloader')).style.visibility = "visible";
      this.CommonService.getdata(AppSettings.getRtubevideolist)
         .subscribe(det =>{

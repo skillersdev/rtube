@@ -57,7 +57,7 @@
                                                         <span><i class="fa fa-play"></i>Watch Video</span>
                                                     </a>
                                                     <div class="video-stats clearfix">
-                                                        <div class="thumb-stats pull-left">
+                                                        <!-- <div class="thumb-stats pull-left">
                                                             <h6>HD</h6>
                                                         </div>
                                                         <div class="thumb-stats pull-left">
@@ -66,7 +66,7 @@
                                                         </div>
                                                         <div class="thumb-stats pull-right">
                                                             <span>05:56</span>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                 </div>
                                                 <div class="post-des">
@@ -78,11 +78,11 @@
                                                         </p>
                                                         <p class="pull-left">
                                                             <i class="fa fa-clock-o"></i>
-                                                            <span>{{data.created_date}}</span>
+                                                            <span>{{data.created_date | date:'dd MMMM y'}}</span>
                                                         </p>
                                                         <p class="pull-left">
                                                             <i class="fa fa-eye"></i>
-                                                            <span>1,862K</span>
+                                                            <span>{{data.total_views}}</span>
                                                         </p>
                                                     </div>
                                                     <div class="post-summary">
