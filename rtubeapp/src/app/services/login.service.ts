@@ -150,12 +150,12 @@ export class LoginService {
 
             //Premium carousel
 
-            // jQuery(document).ready(function() {
-            //     jQuery("#owl-demo").owlCarousel({
-            //     });
-            //   });
+            jQuery(document).ready(function() {
+                jQuery("#owl-demo").owlCarousel({
+                });
+              });
 
-            //  $(document).ready(function () { $("#owl-demo").owlCarousel(); });
+            jQuery(document).ready(function () { jQuery("#owl-demo").owlCarousel(); });
             
             jQuery('.owl-carousel').each(function(){
                 var owl = jQuery(this);
