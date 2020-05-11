@@ -17,6 +17,7 @@ export class NewestVideosComponent implements OnInit {
   premium_video_list:Array<Object>;
   searchModel:any={}; 
   websiteurl:string=AppSettings.API_BASE;
+ 
   constructor(
     private CommonService:CommonService,
     private LoginService:LoginService,
